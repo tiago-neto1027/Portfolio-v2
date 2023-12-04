@@ -5,10 +5,10 @@ import navImage from "../imgs/nav.png";
 <nav id="navbar">
     <ul>
         <li><Image src={navImage} alt="A normal profile picture" width={120}></li>
-        <li><a href="#home"><i class="bi bi-house-fill"></i><br>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person-fill"></i><br>About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text-fill"></i><br>Resume</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope-fill"></i><br>Contact</a></li>
+        <li><a href="index.html"><i class="bi bi-house-fill"></i><br>Home</a></li>
+        <li><a href="about.html"><i class="bi bi-person-fill"></i><br>About</a></li>
+        <li><a href="resume.html"><i class="bi bi-file-earmark-text-fill"></i><br>Resume</a></li>
+        <li><a href="contact.html"><i class="bi bi-envelope-fill"></i><br>Contact</a></li>
     </ul>
 </nav>
 <button><img id="nav-button" src="hamburguer.svg" alt="button to open the navigation bar" width="40px"></button>
@@ -53,7 +53,17 @@ import navImage from "../imgs/nav.png";
         button{
            display: inherit; 
         }
+        nav{
+            position: relative;
+            animation-name: nav-animation-open;
+            animation-duration: 500ms;
+        }
+        @keyframes nav-animation-open{
+            0% {left:-120px}
+            100% {left:0px}
+        }
     }
+
 </style>
 
 <script>
