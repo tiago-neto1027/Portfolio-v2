@@ -9,6 +9,9 @@ import Navbar from "../components/Navbar.astro";
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tiago Neto</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     </head>
     <body>
         <Navbar />
@@ -28,19 +31,63 @@ import Navbar from "../components/Navbar.astro";
         position: relative;
     }
     :root{
-        --color-primary: #111111;
-        --color-secondary: #1e1e1e;
-        --color-tertiary: #3c3c3c;
+        --bg-primary: #111111;
+        --bg-secondary: #1e1e1e;
+        --bg-tertiary: #3c3c3c;
         
-        --text-primary: white;
-        --text-secondary: gold;
+        --color-primary: white;
+        --color-secondary: gold;
 
-        --spacer: 1em;
+        --spacer: 20px;
         --spacer-md: calc(var(--spacer)*2);
+
+        --fs-normal: 1rem;
+        --fs-big: 2rem;
+        --fs-bigger: 3rem;
+        --fs-small: 0.5rem;
+
+        --fnt-title: 'Montserrat', sans-serif;
+        --fnt-text: 'Courier Prime', monospace;
     }
-    h1,h2,h3,h4,p{
-        color: var(--text-primary);
+    h1,h2,h4{
+        color: var(--color-primary);
+        font-family: var(--fnt-title);
+        font-weight: lighter;
     }
+    h3{
+        color: var(--color-secondary);
+        font-family: var(--fnt-title);
+        font-weight: lighter;
+    }
+    .btn-standard{
+        text-decoration: none;
+        border: none;
+        color: var(--color-primary);
+        font-size: var(--fs-normal);
+        background: var(--bg-tertiary);
+        padding: 14px 35px;
+        border-radius: 5px;
+        font-family: var(--fnt-title);
+        font-weight: bold;
+        letter-spacing: 5px;
+        cursor: pointer;
+    }
+    .btn-standard:hover{
+        background: white;
+        color: black;
+        animation: btn-animation 0.3s;
+    }
+    @keyframes btn-animation {
+        from {
+            background-color: var(--bg-tertiary);
+            color: var(--color-primary);
+        }
+        to {
+            background-color: white;
+            color: black;
+        }
+    }
+
     @media only screen and (min-width: 576px){
         .content{
             margin-left: 120px;
