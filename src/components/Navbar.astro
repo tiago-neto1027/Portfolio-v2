@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import navImage from "../imgs/nav.png";
+---
+<nav id="navbar">
+    <ul>
+        <li><Image src={navImage} alt="A normal profile picture" width={120}></li>
+        <li><a href="#home"><i class="bi bi-house-fill"></i><br>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person-fill"></i><br>About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text-fill"></i><br>Resume</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope-fill"></i><br>Contact</a></li>
+    </ul>
+</nav>
+<button><img id="nav-button" src="hamburguer.svg" alt="button to open the navigation bar" width="40px"></button>
+
+<style>
+    nav ul{
+        list-style: none;
+        background: #222222;
+        height: 100vh;
+        align-items:center;
+        position: fixed;
+    }
+    nav a{
+        padding: 7px;
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+    }
+    nav a:hover{
+        background: white;
+        color: black;
+    }
+    nav i{
+        font-size: 34px;
+    }
+    button{
+        position: absolute;
+        padding: 0;
+        background: none;
+        border: none;
+        top: 1.5em;
+        right: 1.5em;
+        display: none;
+        cursor: pointer;
+    }
+    @media only screen and (max-width: 576px){
+        nav{
+            display: none;
+        }
+        button{
+           display: inherit; 
+        }
+    }
+</style>
+
+<script>
+    document.getElementById("nav-button").addEventListener("click", toggleNav);
+    function toggleNav() {
+        var toggler = document.getElementById('navbar');
+
+        if (toggler.style.display === "none"){
+            toggler.style.display = "inherit";
+        } else {
+            toggler.style.display = "none";
+        }
+    }
+</script>
